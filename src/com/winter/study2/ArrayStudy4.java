@@ -51,23 +51,28 @@ public class ArrayStudy4 {
 				}
 			}else if(select==3) {
 				System.out.println("검색");
-				for(int i = 0 ; i < names.length ; i++) {
-					nums[i]=sc.nextInt();
-					System.out.println(names[i]+nums[i]+","+scores[i]);
+					
+					int	i=sc.nextInt();
+					System.out.println(names[i-1]+nums[i-1]+","+scores[i-1]);
 				}
 				
 				
-			}else if(select==4) {
+			else if(select==4) {
 				System.out.println("성적순");
 				for(int i =0 ; i<names.length ; i++) {
-					
+					int limit = i;
 					for(int j = i ; j<names.length-1 ; j++) {
-						if(scores[i]<scores[j+1]) {
-							int limit = i;
-							scores[i]=scores[j+1];
-							scores[j]=limit;
-						}System.out.println(names[i]+nums[i]+","+scores[i]);
+						if(scores[limit]<scores[j+1]) {
+							limit=j+1;
+							
+						}						
 					}
+					Double temp=scores[limit];
+					scores[limit]=scores[i];
+					scores[i]=temp;
+				}
+				for(int i = 0 ; i<names.length ; i++) {
+					System.out.println(names[i]+nums[i]+","+scores[i]);
 				}
 			}else {
 				System.out.println("종료");
