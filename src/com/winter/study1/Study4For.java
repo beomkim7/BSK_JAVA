@@ -4,54 +4,53 @@ import java.util.Scanner;
 
 public class Study4For {
 	public static void main(String[] args) {
-		//서든 FPS
-		//총알 : 30발 탄창 * 3
-		
-		//1. 단발모드
-		//2. 점사모드
 		Scanner sc = new Scanner(System.in);
 		
-
+		boolean check = true;
 		
-		
-		
-//		Scanner sc = new Scanner(System.in);
-//		
-//		int one;
-//		
-//		for(int i = 1 ; i <= 3 ; i++) {
-//		
-//			
-//			
-//				
-//				one = sc.nextInt();
-//				System.out.println("1. 단발모드");
-//				
-//				System.out.println("2. 점사모드");
-//				
-//				System.out.println("3. 연사모드");
-//			
-//					if(one == 1) {
-//						for(int j =1;j<=30;j++) {
-//							System.out.println("탕");}
-//					}
-//					if(one == 2) {
-//						for(int j =1 ; j<=10 ; j++) {
-//					
-//					System.out.println("탕탕탕");
-//					}}
-//					if(one == 3) {
-//						for(int j = 1 ; j <=30 ; j++) {
-//							System.out.print("탕");
-//							
-//						}System.out.println("");
-//					}
-//					if(i<=2) {System.out.println(i+"탄창 소모");}
-//					else {System.out.println("마지막 탄창 소모");}
-//			}
+		int id = 1234;
+		int pw = 2345;
+		while(check) {
+			System.out.println("1.로그인 2.나가기");
+			int get = sc.nextInt();
 			
 			
+			if(get == 1) {
+				System.out.println("id pw입력");
+				int rid = sc.nextInt() ;
+				int rpw = sc.nextInt() ;
+				if(rid == id && rpw == pw) {
+					System.out.println("로그인 되었습니다");
+					break;
+				}else {
+					System.out.println("id pw 확인");
+				}
+			}else {
+				check=false;
+			}
+		}
+		if(check) {
+			int level = 1 ;
+			int gold =0 ;
 			
+			for(;level<15;level++) {
+				if(level%5==0) {
+					gold = level/5*1000;
+					System.out.println(gold);
+				}
+				
+				
+				for(int m = 0 ; m <level * 3 ;m++) {
+					System.out.println(m+1+"사냥 성공");
+				}
+				System.out.println("축 레벨업 : "+(level+1));
+			}
+			gold = gold +3000;
+			System.out.println("최종 레벨 : "+level);
+			System.out.println("최종 골드 : "+gold);
+			
+		}
+		
 	}
 
 }
