@@ -28,9 +28,17 @@ public class SchoolContraller {
 				schoolview.view(students);
 				break;
 			case 3:
-				
+
+				Student s = schoolservice.findByNum(students);
+				if(s != null) {
+					schoolview.view(s);
+				}else {
+					schoolview.view("학생이 없다");
+				}
+
 				break;
 			case 4:
+				
 				break;
 			default:
 				break;
