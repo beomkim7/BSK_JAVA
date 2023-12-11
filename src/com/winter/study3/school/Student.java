@@ -11,6 +11,6 @@ public class Student {
 	
 	//멤버 메서드 선언(instance method) 공식, function
 	//public static void main(string [] args)
-	//접근지정자 [그외지정자] 리턴타입 메서드명([매개변수 선언])
+	//접근지정자 [그외지정자] 리턴타입 메서드명([매개변수 선언]).
 	
 }
