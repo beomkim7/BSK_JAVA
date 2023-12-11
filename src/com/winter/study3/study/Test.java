@@ -19,7 +19,7 @@ public class Test {
 	}
 	
 	
-	public int t3(Human human) {
+	public Human t3(Human human) {
 		if(human.age>19) {
 			System.out.println("성년");
 		}else {
