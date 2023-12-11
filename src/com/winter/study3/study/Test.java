@@ -28,7 +28,7 @@ public class Test {
 		human = new Human();
 		human.age = 500;
 		
-		return human.age;
+		return human;
 	}
 	
 	
