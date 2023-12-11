@@ -19,25 +19,27 @@ public class Test {
 	}
 	
 	
-	public int t3(Human human) {
+	public Human t3(Human human) {
 		if(human.age>19) {
 			System.out.println("성년");
 		}else {
 			System.out.println("미성년");
 		}
+		
 		human = new Human();
 		human.age = 500;
 		
-		return human.age;
+		return human;
 	}
 	
 	
-	public void t4(int [] ar) {
+	public int[] t4(int [] ar) {
 		for (int i = 0 ; i<ar.length;i++) {
 			System.out.println(ar[i]);
 									
 		}
 		ar= new int[2];
+		return ar;
 	}
 	
 	

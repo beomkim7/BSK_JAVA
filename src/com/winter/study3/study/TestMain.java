@@ -15,7 +15,7 @@ public class TestMain {
 		
 		Human human = new Human();
 		human.age = 20;
-		test.t3(human);//인자값
+		human = test.t3(human);//인자값
 		
 		System.out.println(human.age);
 		
@@ -23,7 +23,7 @@ public class TestMain {
 		ar[0]=3;
 		ar[1]=2;
 		ar[2]=6;
-		test.t4(ar);
+		ar = test.t4(ar);
 	}
 
 }
