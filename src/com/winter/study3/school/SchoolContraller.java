@@ -7,7 +7,7 @@ public class SchoolContraller {
 	public void start() {
 		Scanner sc = new Scanner(System.in);
 		SchoolService schoolservice = new SchoolService();
-		Student[] students = null;
+		Student[] students = new Student[0];
 		SchoolView schoolview = new SchoolView();
 		
 		boolean check = true;
