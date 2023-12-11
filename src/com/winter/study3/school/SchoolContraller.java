@@ -6,6 +6,9 @@ public class SchoolContraller {
 
 	public void start() {
 		Scanner sc = new Scanner(System.in);
+		SchoolService schoolservice = new SchoolService();
+		Student[] students = null;
+		SchoolView schoolview = new SchoolView();
 		
 		boolean check = true;
 		
@@ -19,8 +22,10 @@ public class SchoolContraller {
 			int select = sc.nextInt();
 			switch(select) {
 			case 1:
+				students = schoolservice.makeStudents();
 				break;
 			case 2:
+				schoolview.view(students);
 				break;
 			case 3:
 				break;
