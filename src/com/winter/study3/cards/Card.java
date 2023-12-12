@@ -7,6 +7,10 @@ public class Card {
 	private String shape;
 	private String color;
 	
+	static {
+		
+	}
+	
 	public Card(int size, int num , String shape, String color) {
 		Card.size=size;
 		this.num=num;
@@ -16,7 +20,8 @@ public class Card {
 	
 	public static void m1() {
 		System.out.println(Card.size);
-		
+		//System.out.println(this.size); x
+		//this.info();					 x
 	}
 	
 	public void info() {
