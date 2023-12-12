@@ -11,6 +11,26 @@ public class SchoolService {
 	//findByNum
 	//학생번호를 입력받아서, 일치하는 학생이 있는지 검색
 	//해당학생을 리턴 없으면 null리턴
+	public Student [] addStudent(Student [] students) {
+		Scanner sc = new Scanner(System.in);
+		Student student = new Student();
+		System.out.println("이름을 입력");
+		student.name=sc.next();
+		System.out.println("번호을 입력");
+		student.num=sc.nextInt();
+		System.out.println("학점을 입력");
+		student.jumsu=sc.nextDouble();
+		
+		Student [] newStudents =new Student[students.length+1];
+		for(int i=0 ; i < students.length;i++) {
+			newStudents[i]=students[i];
+		}
+//		newStudents[newStudents.length-1]=student;
+		newStudents[students.length]=student;
+		
+		return newStudents;
+		
+	}
 	
 	//매서드 makeStudents
 	//학생수를 입력받아서 수만큼 학생정보를 입력
@@ -49,10 +69,5 @@ public class SchoolService {
 		}
 		return student;
 	}
-	public void addStudent() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("추가할 학생 입력");
-	}
-	
 	
 }

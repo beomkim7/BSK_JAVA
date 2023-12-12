@@ -38,6 +38,7 @@ public class SchoolContraller {
 
 				break;
 			case 4:
+				students = schoolservice.addStudent(students);
 				
 				break;
 			default:
