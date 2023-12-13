@@ -1,6 +1,5 @@
 package com.winter.study3.school;
 
-import java.util.Scanner;
 
 public class SchoolView {
 	

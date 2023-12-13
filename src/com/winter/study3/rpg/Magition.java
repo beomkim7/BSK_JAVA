@@ -1,26 +1,36 @@
 package com.winter.study3.rpg;
 
-public class Magition {
+public class Magition extends Character {
 	
 	
-	String name;
-	int hp;
-	int mp;
+
+	private int mp;
 	
 	public void info() {
-		//String localName = "abc";
-		//멤버메서드내에서 멤버변수를 접근해서 사용가능
-		//name="iu";
-		System.out.println(this);
-		System.out.println("Name : "+this.name);
-		System.out.println("Hp : "+this.hp);
-		this.t1();
-		t1();
+		super.superInfo();
+		System.out.println(this.mp);
+				
 	}
 	
+	
+	
+	public int getMp() {
+		return mp;
+	}
+
+
+
+	public void setMp(int mp) {
+		this.mp = mp;
+	}
+
+
+
 	public void t1() {
-		System.out.println("Test 매서드 입니다");
+		System.out.println("Test 메서드 입니다");
 		this.info();
 	}
+	
+	
 	
 }
