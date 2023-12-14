@@ -41,9 +41,11 @@ public class SchoolContraller {
 				students = schoolservice.addStudent(students);
 				
 				break;
+			case 5:
+				check = false;
+				
 			default:
 				break;
-				
 			}
 		}
 	}
