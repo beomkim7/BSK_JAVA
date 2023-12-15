@@ -1,4 +1,4 @@
-package com.winter.study4.ex2;
+package com.winter.study4.lang.ex2;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Ex2Main {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		java.util.Scanner sc = new Scanner(System.in);
 		System.out.println("주민번호 입력");
 		String myNum = sc.next();
 		System.out.println(myNum);
@@ -46,15 +46,16 @@ public class Ex2Main {
 		String season = Ex2season.getSeason(birthMon);
 		System.out.println(season);
 		
+		String s12 = new String();
+		Object obj = new Object();
 		
 		
 		
-		int lol = Integer.parseInt(myNum.substring(0,6));
-		int lol2 = Integer.parseInt(myNum.substring(7,14));
-		
-		System.out.println(lol);
-		System.out.println(lol2);
-		for(int i =0 ; i<13 ; i++) {
+		for(int i =0 ; i<myNum.length() ; i++) {
+			char a = myNum.charAt(i);
+			
+			int n = Integer.parseInt(String.valueOf(a));
+			
 			
 		}
 		//1. 남자여자 구별

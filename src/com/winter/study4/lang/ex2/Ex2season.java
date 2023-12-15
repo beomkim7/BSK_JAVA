@@ -1,4 +1,4 @@
-package com.winter.study4.ex2;
+package com.winter.study4.lang.ex2;
 
 public class Ex2season {
 	public static String getSeason(int birthMon){
