@@ -12,6 +12,7 @@ public class Ex2Main {
 		
 		StudySetInfo studySetInfo = new StudySetInfo();
 		
+		studySetInfo.ex0();		
 		studySetInfo.ex1();
 		studySetInfo.ex2();
 	}
