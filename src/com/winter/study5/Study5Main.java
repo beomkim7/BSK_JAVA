@@ -32,9 +32,10 @@ public class Study5Main{
 				// TODO: handle exception
 			}catch(RuntimeException e) {
 				System.out.println("Exception 발생");
-			}catch (Throwable e) {
-				
+			}catch (Throwable e) {				
 				// TODO: handle exception
+			}finally {
+				
 			}
 			
 			int a = 10 ;
