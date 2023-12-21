@@ -38,7 +38,7 @@ public class SchoolService {
 		Student student = null;
 		for(int i = 0 ; i < students.length ; i++) {
 			
-		if(num==students[i].num) {
+		if(num == students[i].num) {
 			//return students[i];
 			student = students[i];
 			break;

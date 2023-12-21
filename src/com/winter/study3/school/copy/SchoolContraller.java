@@ -1,4 +1,4 @@
-package com.winter.study3.school;
+package com.winter.study3.school.copy;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ public class SchoolContraller {
 	public void start() {
 		Scanner sc = new Scanner(System.in);
 		SchoolService schoolservice = new SchoolService();
-		Student[] students = new Student[0];
+		Student [] students = new Student[0];
 		SchoolView schoolview = new SchoolView();
 		
 		boolean check = true;
@@ -19,35 +19,30 @@ public class SchoolContraller {
 			System.out.println("4. 학생정보추가");
 			System.out.println("5. 프로그램종료");
 			
-			int select = sc.nextInt();
 			
-			switch(select) {
-			case 1:
+			int select = sc.nextInt() ;
+			
+			if(select == 1) {
 				students = schoolservice.makeStudents();
-				break;
-			case 2:
+				
+			}else if(select == 2) {
 				schoolview.view(students);
-				break;
-			case 3:
-
+				
+			}else if(select == 3) {
 				Student s = schoolservice.findByNum(students);
 				if(s != null) {
 					schoolview.view(s);
 				}else {
-					schoolview.view("학생이 없다");
+					schoolview.view("찾을수 없다");
 				}
-
-				break;
-			case 4:
+			}else if(select == 4) {
 				students = schoolservice.addStudent(students);
 				
-				break;
-			case 5:
+			}else{
 				check = false;
-				
-			default:
-				break;
 			}
+			
 		}
+
 	}
 }

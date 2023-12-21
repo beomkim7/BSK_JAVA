@@ -4,12 +4,25 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.nio.file.Watchable;
+import java.sql.Array;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.util.logging.SimpleFormatter;
 
 public class WeatherDAO {
+	private static final String c = null;
+	private static int count;
+	
+	
+	
+
 	//DAO : Data Access Object
 	
 	//getWeathers
@@ -22,36 +35,96 @@ public class WeatherDAO {
 	//5. List를 return
 	
 	public ArrayList<WeatherDTO> getWeathers() throws Exception {
+		
+		
 		ArrayList<WeatherDTO> ar = new ArrayList<>();
-		File file = new File("C:\\study\\weather.txt.log");
-		FileReader fr = new FileReader(file);
-		BufferedReader br = new BufferedReader(fr);
-		br.readLine();
-		while(true) {
-			String s = br.readLine();
-			if(s ==null) {
-				break;
-			}
-			
-			//파싱 - split, StringTokenizer
-			
-			System.out.println(s);
-			StringTokenizer st = new StringTokenizer(s, "-");
-			//서울-12-맑음-60
-			WeatherDTO weatherDTO = new WeatherDTO();
-			
-			weatherDTO.setCity(st.nextToken());
-			weatherDTO.setGion(Integer.parseInt(st.nextToken()));
-			weatherDTO.setInfo(st.nextToken());
-			weatherDTO.setHum(Integer.parseInt(st.nextToken()));
-			
-			ar.add(weatherDTO);
-			
+		File file = new File("C:\\study\\weather");
+		String [] names = file.list();
+		String [] test = {"3.txt","2.txt","4.txt"};
+//		String [] name = new String[names.length];
+		long [] name = new long[names.length];
+		//for, while
+		long max = 0;
+		
+//		Arrays.sort(test);
+		List<String> a = Arrays.asList(test);
+		
+		for(String n : test) {
+			System.out.println(n);
 		}
 		
-		br.close();
-		fr.close();
+		for(int i =0;i<names.length;i++) {
+			
+			//split, StringTo, substring, indexOf, lastIndexOf
+			
+//			String [] r = names[i].split(".");
+//			name[i]=r[0];	방법1
+			
+//			StringTokenizer st = new StringTokenizer(names[i],".");
+//			name[i]=st.nextToken(); 방법 2
+			
+//			name[i] = Long.parseLong(names[i].substring(0,names[i].lastIndexOf(".")));
+			long n = Long.parseLong(names[i].substring(0,names[i].lastIndexOf(".")));
+			
+			if(max < name[i]){
+				max=name[i];
+			}
+		}
 		
+		
+		
+//		for(int i = 0 ; i<name.length ; i++) {
+//			if(max < name[i]){
+//				max=name[i];
+//			}
+//		}코드중복 윗쪽포문으로 올림
+		
+		
+		
+//		for(String n:names) {
+//			
+//			String [] r = n.split(".");
+//			name[]
+//		} 사용불가 i필요
+		
+//		int i =0;
+//		while(true) {
+//			names[i];
+//			i++;
+//			if(i>=names.length) {
+//				break;
+//			}
+//		}
+		
+//		file = new File(file,max+"text");
+//		FileReader fr = new FileReader(file);
+//		BufferedReader br = new BufferedReader(fr);
+//		br.readLine();
+//		while(true) {
+//			String s = br.readLine();
+//			if(s ==null) {
+//				break;
+//			}
+//			
+//			//파싱 - split, StringTokenizer
+//			
+//			System.out.println(s);
+//			StringTokenizer st = new StringTokenizer(s, "-");
+//			//서울-12-맑음-60
+//			WeatherDTO weatherDTO = new WeatherDTO();
+//			
+//			weatherDTO.setCity(st.nextToken());
+//			weatherDTO.setGion(Integer.parseInt(st.nextToken()));
+//			weatherDTO.setInfo(st.nextToken());
+//			weatherDTO.setHum(Integer.parseInt(st.nextToken()));
+//			
+//			ar.add(weatherDTO);
+//			
+//		}
+//		
+//		br.close();
+//		fr.close();
+//		
 		
 		return ar;
 		
@@ -107,13 +180,51 @@ public class WeatherDAO {
 		//##날씨정보
 		//도시명-기온-정보-습도
 		//도시명-기온-정보-습도
-		File file = new File("C:\\study\save.txt");
+		//20231220+count
+		
+		WeatherDAO.count++;
+		
+		Calendar c = Calendar.getInstance();
+//		int year = c.get(Calendar.YEAR);
+//		int mon = c.get(Calendar.MONTH)+1;
+//		int day = c.get(Calendar.DAY_OF_MONTH);
+//		//""+y
+//		String fileName=String.valueOf(year)+mon+day+WeatherDAO.count;
+//		SimpleDateFormat sd=new SimpleDateFormat("yyyyMMdd");
+//		String fileName=sd.format(c.getTime());
+//		fileName = fileName+WeatherDAO.count;
+		
+		SimpleDateFormat sd = new SimpleDateFormat("yyyyMMdd");
+		
+		File file = new File("C:\\study\\weather\\");
+		String fileName = sd.format(c.getTimeInMillis())+WeatherDAO.count+".txt";
+		file = new File(file,fileName);
 		FileWriter fw = new FileWriter(file);
 		fw.write("##날씨정보\r");
 		fw.flush();
 		
-		fw.write("도시명-기온-정보-습도\r");
+		for(WeatherDTO weatherDTO:ar) {
+//			String s = weatherDTO.getCity();
+//			s=s+"-"+weatherDTO.getGion();
+//			s=s+"-"+weatherDTO.getInfo();
+//			s=s+"-"+weatherDTO.getHum()+"\r";
+//			fw.write(s);
+//			fw.flush();
+			
+			
+			fw.write(weatherDTO.getCity()+"-");
+			fw.write(weatherDTO.getGion()+"-");
+			fw.write(weatherDTO.getInfo()+"-");
+			fw.write(weatherDTO.getHum()+"\r");
+			fw.flush();
+			
+		}
+		
+		//fw.write("도시명-기온-정보-습도\r");
+		fw.close();
+		
 	}
+
 	
 	
 

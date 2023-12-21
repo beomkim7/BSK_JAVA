@@ -51,16 +51,17 @@ public class WeatherController {
 				}else if(select == 3){
 					boolean flag = weatherDAO.add(ar, sc);
 
-				}else if(select ==4) {
+				}else if(select == 4) {
 					boolean flag = weatherDAO.delete(ar, sc);
 				}else if(select == 5){
-					
+					weatherDAO.save(ar);
 				}else {
 				
 					System.out.println("종료합니다.");
 					break;
 				}
 			}catch(Exception e) {
+				e.printStackTrace();
 				System.out.println("잘못입력 했다");
 				System.out.println(sc.next());
 				
