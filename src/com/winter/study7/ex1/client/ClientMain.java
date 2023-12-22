@@ -10,7 +10,12 @@ public class ClientMain {
 		
 		//start()
 		//참조변수명.멤버
-		controller.start(Scanner);
+		try {
+			controller.start(null);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

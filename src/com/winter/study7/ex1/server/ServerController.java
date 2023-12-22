@@ -4,6 +4,9 @@ public class ServerController {
 	public void start() {
 		//client와 연결 준비
 		
+		public void start() throws Exception{
+			
+		}
 		
 	}
 }
