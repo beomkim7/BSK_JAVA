@@ -45,19 +45,7 @@ public class Ex2Main {
 		int birthMon =Integer.parseInt(myNum.substring(3,4));
 		String season = Ex2season.getSeason(birthMon);
 		System.out.println(season);
-		
-		String s12 = new String();
-		Object obj = new Object();
-		
-		
-		
-		for(int i =0 ; i<myNum.length() ; i++) {
-			char a = myNum.charAt(i);
-			
-			int n = Integer.parseInt(String.valueOf(a));
-			
-			
-		}
+
 		//1. 남자여자 구별
 		
 		//2. 대략 나이?
@@ -73,9 +61,31 @@ public class Ex2Main {
 		// 결과 2자리라면 
 		//	그 나머지를 10으로 나눈 나머지를 
 		//	그 나머지를 체크번호와 일치 확인
+		char [] chs = myNum.toCharArray();
 		
+		int temp=2;
+		int sum=0;
+		for(int i = 0 ; i <myNum.length();i++) {
+			if(i==6) {
+				continue;
+			}
+			if(temp>9) {
+				temp=2;
+			}
+			char c = chs[i];//myNum.charAt(i);
+			int n = Integer.parseInt(String.valueOf(c));
+			sum = sum+n*temp;
+			temp++;
+		}
 		
+		sum=11-sum%11;
+		if(sum>9) {
+			sum=sum%10;
+		}
 		
+		if(sum == myNum.charAt(myNum.length()-1)) {
+			
+		}
 		//이름 , 주민
 		
 

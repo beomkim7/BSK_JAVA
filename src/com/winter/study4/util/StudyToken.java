@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import com.winter.study4.lang.ex1.WeatherData;
+
 public class StudyToken {
 
 	public static void main(String[] args) {

@@ -1,6 +1,8 @@
 package com.winter.study4.util.ex1;
 
 public class StudentDTO {
+	//Data Transfer Object
+	//VO  Value Object
 	private String name;
 	private int num;
 	private int kor;
@@ -51,4 +53,6 @@ public class StudentDTO {
 	public void setAvg(double avg) {
 		this.avg = avg;
 	}
+	
+	
 }

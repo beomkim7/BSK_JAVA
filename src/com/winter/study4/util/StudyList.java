@@ -17,13 +17,15 @@ public class StudyList {
 		
 		//삽입
 		ar.add(1, 4);
+		System.out.println(ar.size());
 		//수정
 		ar.set(0,'1');
-		
+		System.out.println(ar.size());
 		//삭제
-		ar.remove(1);		
+		ar.remove(1);
+		System.out.println(ar.size());
 		ar.remove("second");
-		ar.clear();
+		
 		
 		for(int i = 0 ; i < ar.size();i++) {
 			//get
