@@ -19,7 +19,7 @@ public class StudyFile {
 				break;
 			}
 			if(!s.isEmpty()) {
-				System.out.println(s);
+			System.out.println(s);
 			}
 		}
 		//연결된 순서의 역순으로 해제
