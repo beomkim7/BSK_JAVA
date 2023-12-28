@@ -68,6 +68,8 @@ public class WeatherDAO {
 			
 			if(max < name[i]){
 				max=name[i];
+				max++;
+				break;
 			}
 		}
 		
